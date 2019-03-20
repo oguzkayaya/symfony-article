@@ -9,26 +9,45 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Article
 {
-    /**
+  /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+  private $id;
 
-    public function getId(): ?int
-    {
-        return $this->id;
+  public function getId(): ? int
+  {
+    return $this->id;
+  }
 
-    }
-
-    /**
+  /**
      * @ORM\Column(type="text", length=100)
      */
-    private $title;
+  private $title;
 
-    /**
+  public function getTitle()
+  {
+    return $this->title;
+  }
+
+  public function setTitle($title)
+  {
+    $this->title = $title;
+  }
+
+  /**
      * @ORM\Column(type="text")
      */
-    private $body;
+  private $body;
+
+  public function getBody()
+  {
+    return $this->body;
+  }
+
+  public function setBody($body)
+  {
+    $this->body = $body;
+  }
 }
